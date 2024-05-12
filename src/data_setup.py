@@ -54,14 +54,14 @@ class Augmented_NMTDataset(NMTDataset):
         augmented_src_sequence = self.text_to_sequence(augmented_src)
         augmented_tgt_sequence = self.text_to_sequence(augmented_tgt)
 
-        self.src_input_ids = torch.stack((self.src_input_ids, augmented_src_sequence), dim=0)
-        self.labels = torch.stack((self.labels, augmented_tgt_sequence), dim=0)
+        self.src_input_ids = torch.cat((self.src_input_ids, augmented_src_sequence), dim=0)
+        self.labels = torch.cat((self.labels, augmented_tgt_sequence), dim=0)
 
     def read_data(self, split, prefix):
         return super().read_data(split, prefix)
 
     def text_to_sequence(self, text):
-        return super().text_to_sequence()
+        return super().text_to_sequence(text)
 
     def __getitem__(self, idx):
         return {

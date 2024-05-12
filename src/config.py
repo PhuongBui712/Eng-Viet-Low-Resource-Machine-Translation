@@ -14,6 +14,7 @@ class NMTConfig(BaseConfig):
     max_length = 128
     add_special_tokens = True
     cache_dir = '../.cache'
+    augmented_data_size = 0.0001
 
     # model
     model_name = "Helsinki-NLP/opus-mt-en-vi"
