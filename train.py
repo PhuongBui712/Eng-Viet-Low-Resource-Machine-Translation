@@ -1,7 +1,7 @@
-from config import NMTConfig
-from data_setup import NMTDataset, Augmented_NMTDataset
+from src.config import NMTConfig
+from src.data_setup import NMTDataset, Augmented_NMTDataset
 from inference import inference
-from utils import load_data
+from src.utils import load_data
 
 import os
 import numpy as np
